@@ -8,8 +8,8 @@
 body {
     font-family: 'Noto Sans KR', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #2A3B41;
+    background-color: #F7F9FA;
 }
 
 .container {
@@ -35,7 +35,7 @@ img {
 
 /* 헤더 스타일 */
 header {
-    background-color: #3a5a78;
+    background-color: #286D80;
     color: #fff;
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -66,10 +66,17 @@ header .container {
     padding: 5px;
     border-radius: 5px;
     filter: brightness(1.1) contrast(1.1);
+    margin-right: 10px;
+}
+
+.site-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .logo a:hover {
-    color: #f0f0f0;
+    color: #F7F9FA;
 }
 
 nav ul {
@@ -86,13 +93,13 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* 히어로 섹션 */
 .hero {
-    background: linear-gradient(135deg, #f4f7f9 0%, #e6edf2 100%);
-    color: #3a5a78;
+    background: linear-gradient(135deg, #F7F9FA 0%, #E6F1F3 100%);
+    color: #286D80;
     text-align: center;
     padding: 3rem 0 5rem;
     position: relative;
@@ -102,7 +109,7 @@ nav ul li a:hover {
     font-size: 2.8rem;
     margin-bottom: 1rem;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(135deg, #1A5B92 0%, #3a5a78 50%, #29A0B1 100%);
+    background: linear-gradient(135deg, #286D80 0%, #1C4F59 50%, #DE9E3C 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -113,26 +120,26 @@ nav ul li a:hover {
     font-size: 1.3rem;
     max-width: 700px;
     margin: 0 auto;
-    color: #2c465e;
+    color: #1C4F59;
     font-weight: 400;
 }
 
 /* 사이트 소개 섹션 */
 .about-site {
     padding: 4rem 0;
-    background-color: #f4f7f9;
+    background-color: #F7F9FA;
 }
 
 .about-site h2 {
     font-size: 2rem;
-    color: #3a5a78;
+    color: #286D80;
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .about-site p {
     font-size: 1.1rem;
-    color: #555;
+    color: #2A3B41;
     margin-bottom: 1rem;
     max-width: 900px;
     margin-left: auto;
@@ -145,7 +152,7 @@ nav ul li a:hover {
     margin-bottom: 3rem;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
     max-height: 600px;
     width: 100%;
     position: relative;
@@ -199,7 +206,7 @@ nav ul li a:hover {
 }
 
 .hero-content strong {
-    color: #1A5B92;
+    color: #DE9E3C;
     font-weight: 700;
 }
 
@@ -211,24 +218,24 @@ nav ul li a:hover {
 }
 
 .btn-primary {
-    background-color: #3a5a78;
+    background-color: #286D80;
     color: white;
     padding: 0.8rem 2rem;
     border-radius: 30px;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(58, 90, 120, 0.2);
+    box-shadow: 0 4px 10px rgba(40, 109, 128, 0.2);
 }
 
 .btn-primary:hover {
-    background-color: #2c465e;
+    background-color: #1C4F59;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(58, 90, 120, 0.3);
+    box-shadow: 0 6px 15px rgba(40, 109, 128, 0.3);
 }
 
 .btn-secondary {
     background-color: rgba(255, 255, 255, 0.9);
-    color: #3a5a78;
+    color: #286D80;
     padding: 0.8rem 2rem;
     border-radius: 30px;
     font-weight: 500;
@@ -298,7 +305,7 @@ nav ul li a:hover {
 .image-caption {
     text-align: center;
     font-size: 0.9rem;
-    color: #666;
+    color: #2A3B41;
     margin-top: 0.5rem;
 }
 
@@ -319,40 +326,41 @@ nav ul li a:hover {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .feature-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(40, 109, 128, 0.2);
 }
 
 .feature-item h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #3a5a78;
+    color: #286D80;
 }
 
 .feature-item p {
     margin-bottom: 1.5rem;
-    color: #666;
+    color: #2A3B41;
 }
 
 /* 버튼 스타일 */
 .btn {
     display: inline-block;
-    background-color: #3a5a78;
+    background-color: #286D80;
     color: white;
     padding: 0.7rem 1.5rem;
     border-radius: 30px;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(58, 90, 120, 0.2);
+    box-shadow: 0 3px 10px rgba(40, 109, 128, 0.2);
 }
 
 .btn:hover {
-    background-color: #2c465e;
+    background-color: #1C4F59;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(58, 90, 120, 0.3);
+    box-shadow: 0 5px 15px rgba(40, 109, 128, 0.3);
 }
 
 .feature-item .btn {
@@ -361,7 +369,7 @@ nav ul li a:hover {
 
 /* 푸터 스타일 */
 footer {
-    background-color: #2c465e;
+    background-color: #1C4F59;
     color: #fff;
     padding: 2rem 0;
     margin-top: 2rem;
@@ -468,7 +476,7 @@ footer a:hover {
 
 /* 페이지 헤더 스타일 */
 .page-header {
-    background: linear-gradient(135deg, #3a5a78 0%, #2c465e 100%);
+    background: linear-gradient(135deg, #286D80 0%, #1C4F59 100%);
     color: white;
     text-align: center;
     padding: 3rem 0 0;
@@ -516,7 +524,7 @@ footer a:hover {
 
 .content-block h3 {
     font-size: 1.6rem;
-    color: #3a5a78;
+    color: #286D80;
     margin-bottom: 1rem;
     border-bottom: 2px solid #f0f0f0;
     padding-bottom: 0.5rem;
@@ -524,26 +532,26 @@ footer a:hover {
 
 .content-block h4 {
     font-size: 1.3rem;
-    color: #3a5a78;
+    color: #286D80;
     margin: 1.5rem 0 0.8rem;
 }
 
 .content-block h5 {
     font-size: 1.1rem;
-    color: #3a5a78;
+    color: #286D80;
     margin: 1.2rem 0 0.5rem;
 }
 
 .recipe-box {
     background-color: #f9f9f9;
     border-radius: 8px;
-    border-left: 4px solid #3a5a78;
+    border-left: 4px solid #286D80;
     padding: 1.2rem;
     margin: 1rem 0 1.5rem;
 }
 
 .recipe-box h5 {
-    color: #2c465e;
+    color: #1C4F59;
     font-size: 1.05rem;
     margin-top: 0.8rem;
     margin-bottom: 0.3rem;
@@ -561,12 +569,14 @@ footer a:hover {
     margin-bottom: 1rem;
     line-height: 1.7;
     font-size: 1rem;
+    color: #2A3B41;
 }
 
 .content-block ul, .content-block ol {
     margin-left: 1.5rem;
     margin-bottom: 1.5rem;
     font-size: 1rem;
+    color: #2A3B41;
 }
 
 .content-block li {
@@ -581,13 +591,13 @@ footer a:hover {
 }
 
 .content-block strong {
-    color: #2c465e;
+    color: #1C4F59;
     font-size: inherit;
 }
 
 /* 활성 메뉴 아이템 */
 nav ul li.active a {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.25);
     font-weight: 700;
 }
 
@@ -602,5 +612,5 @@ nav ul li.active a {
 
 .effect-image:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(40, 109, 128, 0.2);
 } 
