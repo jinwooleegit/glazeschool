@@ -82,6 +82,7 @@ header .container {
 nav ul {
     display: flex;
     gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -407,6 +408,12 @@ footer a:hover {
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 1rem;
+    }
+    
+    nav ul li a {
+        font-size: 0.95rem;
+        padding: 4px 8px;
     }
     
     .hero h2 {
@@ -450,7 +457,12 @@ footer a:hover {
     }
     
     nav ul {
-        gap: 0.7rem;
+        gap: 0.5rem;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 3px 6px;
     }
     
     .page-header h2 {
