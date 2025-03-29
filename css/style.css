@@ -55,6 +55,17 @@ header .container {
     font-weight: 700;
     color: #fff;
     transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 50px;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 5px;
+    border-radius: 5px;
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .logo a:hover {
@@ -80,22 +91,30 @@ nav ul li a:hover {
 
 /* 히어로 섹션 */
 .hero {
-    background: linear-gradient(135deg, #3a5a78 0%, #2c465e 100%);
-    color: white;
+    background: linear-gradient(135deg, #f4f7f9 0%, #e6edf2 100%);
+    color: #3a5a78;
     text-align: center;
-    padding: 5rem 0;
+    padding: 3rem 0 5rem;
+    position: relative;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #1A5B92 0%, #3a5a78 50%, #29A0B1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
+    font-size: 1.3rem;
+    max-width: 700px;
     margin: 0 auto;
-    opacity: 0.9;
+    color: #2c465e;
+    font-weight: 400;
 }
 
 /* 사이트 소개 섹션 */
@@ -123,16 +142,109 @@ nav ul li a:hover {
 
 /* 이미지 스타일 */
 .hero-image {
-    margin-bottom: 2rem;
-    border-radius: 8px;
+    margin-bottom: 3rem;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    max-height: 600px;
+    width: 100%;
+    position: relative;
+    transform: perspective(1000px) rotateX(2deg);
+    aspect-ratio: 16/9;
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.15), transparent);
+    pointer-events: none;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 60%, rgba(0, 0, 0, 0.08));
+    pointer-events: none;
+    z-index: 1;
 }
 
 .hero-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.7s ease, filter 0.7s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.03);
+    filter: saturate(1.1);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content strong {
+    color: #1A5B92;
+    font-weight: 700;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-primary {
+    background-color: #3a5a78;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(58, 90, 120, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #2c465e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(58, 90, 120, 0.3);
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #3a5a78;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .feature-image {
@@ -141,22 +253,25 @@ nav ul li a:hover {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
 }
 
 .feature-item:hover .feature-image {
-    transform: scale(1.03);
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
 .content-image {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     height: auto;
     border-radius: 8px;
     margin: 1rem auto 2rem;
     display: block;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    max-height: 400px;
 }
 
 .image-grid {
@@ -168,10 +283,16 @@ nav ul li a:hover {
 
 .image-grid img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .image-caption {
@@ -216,18 +337,26 @@ nav ul li a:hover {
     color: #666;
 }
 
+/* 버튼 스타일 */
 .btn {
     display: inline-block;
     background-color: #3a5a78;
     color: white;
     padding: 0.7rem 1.5rem;
-    border-radius: 4px;
+    border-radius: 30px;
     font-weight: 500;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(58, 90, 120, 0.2);
 }
 
 .btn:hover {
     background-color: #2c465e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(58, 90, 120, 0.3);
+}
+
+.feature-item .btn {
+    margin-top: 0.5rem;
 }
 
 /* 푸터 스타일 */
@@ -235,27 +364,29 @@ footer {
     background-color: #2c465e;
     color: #fff;
     padding: 2rem 0;
+    margin-top: 2rem;
 }
 
 footer .container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
 }
 
 footer p {
-    margin-bottom: 1rem;
+    margin: 0;
+    font-size: 0.95rem;
 }
 
 footer a {
     color: #fff;
     text-decoration: underline;
+    transition: opacity 0.3s;
 }
 
-footer ul {
-    display: flex;
-    gap: 1.5rem;
+footer a:hover {
+    opacity: 0.8;
 }
 
 /* 반응형 디자인 */
@@ -277,6 +408,28 @@ footer ul {
     .hero p {
         font-size: 1rem;
     }
+    
+    .hero-image {
+        transform: none;
+        max-height: 450px;
+    }
+    
+    .page-header-image img {
+        max-height: 250px;
+    }
+    
+    .content-image {
+        max-height: 300px;
+    }
+    
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    
+    .effect-image,
+    .image-grid img {
+        height: 150px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -291,6 +444,26 @@ footer ul {
     nav ul {
         gap: 0.7rem;
     }
+    
+    .page-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .page-header p {
+        font-size: 0.95rem;
+    }
+    
+    .content-block {
+        padding: 1.5rem;
+    }
+    
+    .content-block h3 {
+        font-size: 1.4rem;
+    }
+    
+    .content-image {
+        max-height: 200px;
+    }
 }
 
 /* 페이지 헤더 스타일 */
@@ -298,7 +471,8 @@ footer ul {
     background: linear-gradient(135deg, #3a5a78 0%, #2c465e 100%);
     color: white;
     text-align: center;
-    padding: 3rem 0;
+    padding: 3rem 0 0;
+    position: relative;
 }
 
 .page-header h2 {
@@ -309,11 +483,27 @@ footer ul {
 .page-header p {
     font-size: 1.1rem;
     opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.page-header-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.page-header-image img {
+    width: 100%;
+    display: block;
+    max-height: 400px;
+    object-fit: cover;
 }
 
 /* 페이지 콘텐츠 스타일 */
 .page-content {
     padding: 3rem 0;
+    font-size: 1rem;
 }
 
 .content-block {
@@ -338,26 +528,79 @@ footer ul {
     margin: 1.5rem 0 0.8rem;
 }
 
+.content-block h5 {
+    font-size: 1.1rem;
+    color: #3a5a78;
+    margin: 1.2rem 0 0.5rem;
+}
+
+.recipe-box {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #3a5a78;
+    padding: 1.2rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.recipe-box h5 {
+    color: #2c465e;
+    font-size: 1.05rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.recipe-box p {
+    margin-bottom: 0.8rem;
+}
+
+.recipe-box ul {
+    margin-bottom: 1rem;
+}
+
 .content-block p {
     margin-bottom: 1rem;
     line-height: 1.7;
+    font-size: 1rem;
 }
 
 .content-block ul, .content-block ol {
     margin-left: 1.5rem;
     margin-bottom: 1.5rem;
+    font-size: 1rem;
 }
 
 .content-block li {
     margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.content-block li p, 
+.content-block li ul, 
+.content-block li ol {
+    font-size: 1rem;
 }
 
 .content-block strong {
     color: #2c465e;
+    font-size: inherit;
 }
 
 /* 활성 메뉴 아이템 */
 nav ul li.active a {
     background-color: rgba(255, 255, 255, 0.2);
     font-weight: 700;
+}
+
+.effect-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.effect-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 } 
